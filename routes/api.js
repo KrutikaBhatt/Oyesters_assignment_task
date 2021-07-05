@@ -52,13 +52,29 @@ router.post('/updateTask',async(req,res)=>{
 });
 
 router.delete('/deleteTask',async(req,res) =>{
+
+    console.log("In delete Task")
     
-    const id = req.query.id;
+    const id = mongoose.Types.ObjectId(req.query.id);
+    console.log("Delete")
     console.log(id);
-
-    Task.findByIdAndRemove(id);
-
-    res.redirect('/task/task');
+    Task.deleteOne({ _id : mongoose.Types.ObjectId(id)})
+        .then(data => {
+            console.log("No issue in delete")
+            console.log("Data",data);
+            if(!data){
+                console.log("Data not found");
+                res.status(404).send({ message : `Cannot Delete with id ${id}. Maybe id is wrong`})
+            }else{
+                console.log("Redirecting ...");
+                res.status(200).send({message :"Delete successfull"});
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: "Could not delete task with id=" + id
+            });
+        });
 });
 
 router.get('/find',(req,res)=>{

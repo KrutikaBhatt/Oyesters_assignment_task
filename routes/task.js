@@ -28,9 +28,14 @@ router.get('/updateTask',(req,res)=>{
 })
 
 router.get('/deleteTask',(req,res)=>{
+    console.log("In delete post");
     axios.delete('https://assignment1-ot.herokuapp.com/api/deleteTask', { params : { id : req.query.id }})
+    .then(()=>{
+        res.redirect('/task/task');
+    })
     .catch(err =>{
         console.log(err);
+        res.send(err);
     })
 })
 
