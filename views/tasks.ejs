@@ -1,0 +1,43 @@
+ <!-- Main Site -->
+ <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between mb-5">
+            <a href="/task/addTask" class="border-shadow">
+                <span class="text-gradient">New User <i class="fas fa-user"></i></span>
+            </a>
+        </div>
+
+        <!-- form handling -->
+        <% for(var i = 0; i < tasks.length; i++) { %>
+            <div class="row mt-5">
+                <div class="col-md-6 m-auto">
+                  <div class="card card-body">
+                      <div class="form-group">
+                        <label for="email">Employee</label>
+                        <h6><%= tasks.employee %></h6>
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Subject</label>
+                        <h6><%= tasks[i].subject %></h6>
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Description</label>
+                        <h6><%= tasks[i].description %></h6>
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Deadine</label>
+                        <h6><%= tasks[i].deadline %></h6>
+                      </div>
+                        <a href="/task/updateTask?id=<%= tasks[i]._id%>" class="btn border-shadow update">
+                        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                        </a>
+                        <a class="btn border-shadow delete" href="/task/deleteTask?id=<%= tasks[i]._id%>" >
+                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+              
+        <% } %>
+    </div>
+</main>

@@ -1,0 +1,42 @@
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/task/task"><i class="fas fa-angle-double-left"></i> All Tasks</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Task</h2>
+            <span >Use the below form to Update an task</span>
+        </div>
+
+       
+ <form method="POST" id="update_task" action="/api/updateTask">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name">Employee</label>
+            <input type="hidden" name="id" value="<%=task._id %>">
+            <input type="text" name="employee" value="<%=task.employee %>" >
+        </div>
+        <div class="form-group">
+            <label for="Email" >Subject</label>
+            <input type="text" name="subject" value="<%=task.subject%>" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="Email" >Description</label>
+            <input type="text" name="description" value="<%=task.description%>" placeholder="description">
+        </div>
+        <div class="form-group">
+            <label for="Email" >Deadline</label>
+            <input type="text" name="deadine" value="<%=task.deadline%>" placeholder="5-7-2021 6PM">
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>

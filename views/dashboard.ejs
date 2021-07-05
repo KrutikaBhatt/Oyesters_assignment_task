@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CRUD functions</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<h1 class="mt-4">This is the Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">Your Information</h1>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <h6><%= user.email %></h6>
+        </div>
+        <div class="form-group">
+          <label for="password">Full name</label>
+          <h6><%= user.name %></h6>
+        </div>
+        <div class="form-group">
+          <label for="password">Date joined</label>
+          <h6><%= user.date %></h6>
+        </div>
+        <button class="btn btn-primarys btn-block"><a href="/users/logout"><h4>Logout</h4></a></button>
+    </div>
+  </div>
+</div>
