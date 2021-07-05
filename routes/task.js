@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 
 router.get('/task',(req,res,next)=>{
-    axios.get('http://localhost:8080/api/allTask').then(function(response){
+    axios.get('https://assignment1-ot.herokuapp.com/api/allTask').then(function(response){
         res.render('tasks', { tasks : response.data });
     })
     .catch(err =>{
@@ -17,7 +17,7 @@ router.get('/addTask',(req,res)=>{
 })
 
 router.get('/updateTask',(req,res)=>{
-    axios.get('http://localhost:8080/api/find', { params : { id : req.query.id }})
+    axios.get('https://assignment1-ot.herokuapp.com/api/find', { params : { id : req.query.id }})
     .then(function(taskdata){
         res.render("update_task", { task: taskdata.data})
     })
@@ -28,7 +28,7 @@ router.get('/updateTask',(req,res)=>{
 })
 
 router.get('/deleteTask',(req,res)=>{
-    axios.delete('http://localhost:8080/api/deleteTask', { params : { id : req.query.id }})
+    axios.delete('https://assignment1-ot.herokuapp.com/api/deleteTask', { params : { id : req.query.id }})
     .catch(err =>{
         console.log(err);
     })
