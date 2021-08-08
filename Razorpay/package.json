@@ -1,0 +1,25 @@
+{
+  "name": "razorpay_redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.12",
+    "razorpay": "^2.0.6",
+    "redis": "^3.1.2",
+    "request": "^2.88.2",
+    "sequelize": "^6.6.5"
+  }
+}
